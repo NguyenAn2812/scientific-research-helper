@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Platform: Claude.ai](https://img.shields.io/badge/Platform-Claude.ai-orange.svg)](https://claude.ai)
 [![Target: Academic Research](https://img.shields.io/badge/Target-Academic%20Research-blue.svg)](#supported-research-stages)
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 > A Claude skill that guides students through every stage of academic research — from brainstorming a topic to verifying statistical outputs.
 
 ---
