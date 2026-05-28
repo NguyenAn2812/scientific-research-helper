@@ -1,0 +1,20 @@
+{
+  "name": "scientific-research-helper",
+  "version": "1.0.0",
+  "description": "A Claude skill that guides students through every stage of academic research",
+  "main": "SKILL.md",
+  "keywords": [
+    "claude-skill",
+    "academic-research",
+  ],
+  "author": "Nguyễn Trần Nhật An",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NguyenAn2812/scientific-research-helper.git"
+  },
+  "files": [
+    "SKILL.md",
+    "references/**/*"
+  ]
+}
