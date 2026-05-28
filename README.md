@@ -199,7 +199,7 @@ If you'd like to code or write templates for this repository, please follow thes
 3. **Clone your fork locally**
 
 ```bash
-   git clone [https://github.com/your-username/scientific-research-helper.git](https://github.com/your-username/scientific-research-helper.git)
+   git clone [https://github.com/NguyenAn2812/scientific-research-helper.git](https://github.com/NguyenAn2812/scientific-research-helper.git)
    cd scientific-research-helper
 
 ```
