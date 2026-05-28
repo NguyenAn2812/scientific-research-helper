@@ -1,4 +1,9 @@
+
 # Scientific Research Helper — Claude Skill
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Platform: Claude.ai](https://img.shields.io/badge/Platform-Claude.ai-orange.svg)](https://claude.ai)
+[![Target: Academic Research](https://img.shields.io/badge/Target-Academic%20Research-blue.svg)](#supported-research-stages)
 
 > A Claude skill that guides students through every stage of academic research — from brainstorming a topic to verifying statistical outputs.
 
@@ -57,13 +62,64 @@ Paste your Python, R, SPSS, Stata, or MATLAB files alongside your report. The sk
 
 ---
 
-## How to Install
+## Installation
 
-1. Download or clone this repository
-2. Open [Claude.ai](https://claude.ai) and navigate to **Skills**
-3. Click **Add Skill** → **Upload from file**
-4. Select `scientific-research-helper.skill`
-5. The skill is now available in your conversations
+### Prerequisites
+
+- A [Claude.ai](https://claude.ai) account (free or paid)
+- Node.js installed on your machine
+
+### Choose Your Installation Method
+
+#### Option 1: Quick Install via npx (Recommended)
+
+You can add this skill directly to your local project environment or global skill registry using the package runner:
+
+```bash
+npx skill add NguyenAn2812/scientific-research-helper
+
+```
+
+*This command automatically pulls the instruction assets (`SKILL.md` and templates) from the remote repository and initializes them for your workspace.*
+
+#### Option 2: Manual Installation from Source
+
+1. **Clone the repository**
+
+```bash
+   git clone [https://github.com/NguyenAn2812/scientific-research-helper.git](https://github.com/NguyenAn2812/scientific-research-helper.git)
+   cd scientific-research-helper
+
+```
+
+2. **Open Claude.ai**
+
+Navigate to [Claude.ai](https://www.google.com/url?sa=E&source=gmail&q=https://claude.ai) and sign in to your account.
+
+3. **Access the Skills panel**
+
+Click your avatar in the bottom-left corner, then select **Skills** (or **Projects** / **Custom Instructions** depending on your Claude interface) from the menu.
+
+4. **Add the skill**
+
+Click **Add Skill** → **Upload from file**, then select `SKILL.md` from your local copy of the repository.
+
+5. **Verify the installation**
+
+The skill should now appear in your Skills library. Start a new conversation and select **Scientific Research Helper** from the skill picker to begin.
+
+### Keeping the Skill Updated
+
+To sync the latest improvements and template updates:
+
+```bash
+# If installed via manual clone
+git pull origin main
+
+# If managed via CLI tool
+npx skill update NguyenAn2812/scientific-research-helper
+
+```
 
 ---
 
@@ -76,25 +132,77 @@ scientific-research-helper/
     ├── research-proposal-template.md    # Standard proposal structure
     ├── writing-review-checklist.md      # Section-by-section review checklist
     └── topic-idea-checklist.md          # Topic feasibility evaluation checklist
+
 ```
 
 ---
 
 ## Design Philosophy
 
-- **Guide, don't ghostwrite.** The skill helps you think through your research — it won't write your thesis for you.
-- **Ask before assuming.** When context is unclear, it asks one or two targeted questions rather than making wrong assumptions.
-- **Evidence first.** For quantitative research, it always asks to verify numbers against actual outputs before giving feedback.
-- **No hallucinated references.** If it can't find a source through search, it says so. It will never fabricate author names or paper titles.
+* **Guide, don't ghostwrite.** The skill helps you think through your research — it won't write your thesis for you.
+* **Ask before assuming.** When context is unclear, it asks one or two targeted questions rather than making wrong assumptions.
+* **Evidence first.** For quantitative research, it always asks to verify numbers against actual outputs before giving feedback.
+* **No hallucinated references.** If it can't find a source through search, it says so. It will never fabricate author names or paper titles.
 
 ---
 
 ## Contributing
 
-Found a gap in the workflows? Have a document type or discipline not well covered? Pull requests are welcome. Please open an issue first to describe what you'd like to add.
+Contributions are welcome and appreciated! Whether you're fixing a typo, adding support for a new research methodology, or improving an existing workflow — your help makes this skill better for everyone.
+
+### Ways to Contribute
+
+* **Report a bug** — Open an issue describing the problem, including the steps to reproduce it and your environment.
+* **Suggest a feature** — Have an idea for a new workflow, document type, or discipline? Open an issue with the **enhancement** label.
+* **Submit a pull request** — See something you can fix or improve? We'd love to review your PR.
+
+### Step-by-Step Contribution Guide
+
+If you'd like to code or write templates for this repository, please follow these steps:
+
+1. **Open an issue first** — Describe what you'd like to change and why so the community can discuss it.
+2. **Fork the repository** — Create your own copy of the project on GitHub.
+3. **Clone your fork locally**
+
+```bash
+   git clone [https://github.com/your-username/scientific-research-helper.git](https://github.com/your-username/scientific-research-helper.git)
+   cd scientific-research-helper
+
+```
+
+4. **Create a feature branch**
+
+```bash
+   git checkout -b feat/your-awesome-feature
+
+```
+
+5. **Make your changes** & follow the [Development Guidelines](https://www.google.com/search?q=%23development-guidelines) below.
+6. **Commit and Push your changes**
+
+```bash
+   git add .
+   git commit -m "feat: add support for qualitative narrative analysis"
+   git push origin feat/your-awesome-feature
+
+```
+
+7. **Open a Pull Request** — Navigate to the original repository and click "New Pull Request". Reference your initial issue in the PR description.
+
+### Development Guidelines
+
+* **Match the existing tone** — The skill communicates with users in a structured, encouraging, and evidence-first style. New instructions should follow the same voice.
+* **Preserve stage awareness** — If your contribution adds a new research stage or workflow, ensure it integrates cleanly with the existing stage system (Stages 1–6).
+* **Don't break existing workflows** — Verify that your changes don't introduce regressions in the file review, writing plan, or literature search features.
+* **Document your additions** — If you add new references or templates to the `references/` directory, include a brief header explaining their purpose.
+
+### Code of Conduct
+
+This project adheres to a simple standard: **be respectful and constructive**. Harassment, personal attacks, or unprofessional behavior will not be tolerated. All interactions — whether in issues, pull requests, or discussions — should foster a welcoming and collaborative environment.
 
 ---
 
 ## License
 
 MIT License — free to use, modify, and distribute.
+
