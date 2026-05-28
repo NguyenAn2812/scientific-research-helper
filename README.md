@@ -161,6 +161,7 @@ $$\text{Improvement Rate} = \left( \frac{\sum \text{After Scores} - \sum \text{B
 ```
 scientific-research-helper/
 ├── SKILL.md                              # Core skill instructions
+├── scientific-research-helper.skill      # skill kit
 └── references/
     ├── research-proposal-template.md    # Standard proposal structure
     ├── writing-review-checklist.md      # Section-by-section review checklist
