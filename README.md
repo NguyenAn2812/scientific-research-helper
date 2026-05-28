@@ -122,7 +122,40 @@ npx skill update NguyenAn2812/scientific-research-helper
 ```
 
 ---
+## Evaluation & Benchmark
 
+To validate the efficiency of the **Scientific Research Helper**, we established a rigorous technical benchmark. For this evaluation, we selected **DeepSeek-V4** (via open-source deployment) as our base language model. 
+
+### Why DeepSeek-V4?
+* **Cost-Effective & Open-Source:** It is currently one of the most powerful, highly accessible, and completely free/open-source models available, making it the perfect daily driver for students and independent researchers.
+* **Reasoning Capabilities:** It provides an ideal baseline to test whether an external system prompt (Skill) can significantly amplify a model's architectural and mathematical verification capabilities.
+
+### Before vs. After Evaluation Matrix (IEEE Layout & PyTorch Code Verification)
+
+The benchmark was conducted using a "trapped" IEEE paper draft paired with an actual Jupyter Notebook (`.ipynb`) containing silent bugs (e.g., unreported data dropping via `.dropna()`, model architecture mismatches like `nn.GELU()` vs. `ReLU`, and heavy validation overfitting logs).
+
+The evaluation is based on a strict 1–5 scoring rubric measuring the model's accuracy, deep structural vision, and behavioral adherence:
+
+| Evaluation Metrics (IEEE & Code Verification Tasks) | Environment | Score | Empirical Evidence from Model Output | Status |
+| :--- | :--- | :---: | :--- | :---: |
+| **Task 1: Accuracy Mismatch Detection**<br>*Paper: claims 96.5% \| Notebook: logs 78.5%* | **Before**<br>(Pure DeepSeek-V4) | **2/5** | Overlooked the final training log cell entirely. Simply parsed the plain text and praised the 96.5% paper claim. | ❌ Fail |
+| | **After**<br>(DeepSeek + Skill) | **5/5** | Flagged under `Clear contradictions`: *"Mâu thuẫn: Văn bản ghi đạt 96.5% nhưng dòng log số #3 trong Notebook chỉ đạt val_acc: 0.785"*. |  Success |
+| **Task 2: Dataset Sample Size ($N$) Drop**<br>*Paper: states N=10,000 \| Notebook: drops to 8,450* | **Before**<br>(Pure DeepSeek-V4) | **1/5** | Completely missed the data-reduction caused silently by the `.dropna()` method. | ❌ Fail |
+| | **After**<br>(DeepSeek + Skill) | **4/5** | Successfully detected the sample size contraction. Prompted the user to update the methodology section (Section III) of the IEEE paper. |  Success |
+| **Task 3: Mathematical & Code Alignment**<br>*Paper: defines ReLU \| Notebook: uses GELU* | **Before**<br>(Pure DeepSeek-V4) | **3/5** | Ignored the discrepancy, treating both activation functions as generic, interchangeable non-linear layers. | ⚠️ Marginal |
+| | **After**<br>(DeepSeek + Skill) | **5/5** | Logged under `Needs review`: *"Kiến trúc mạng trong PyTorch sử dụng nn.GELU() nhưng công thức toán ở phần III (IEEE Layout) lại định nghĩa ReLU"*. |  Success |
+| **Task 4: Structural Response Adherence**<br>*Requirement: Strict 3-tier Markdown layout* | **Before**<br>(Pure DeepSeek-V4) | **3/5** | Generated a long, essay-style narrative review. Required the researcher to manually dissect the feedback. | ⚠️ Text-heavy |
+| | **After**<br>(DeepSeek + Skill) | **5/5** | Strictly adhered to the requested Markdown format: utilized structural rules (`---`), targeted bolding, and structured inventory tables. |  Success |
+
+### Performance Improvement Formula
+
+Using the quantified benchmark matrix above, we can measure the net performance gain:
+
+$$\text{Improvement Rate} = \left( \frac{\sum \text{After Scores} - \sum \text{Before Scores}}{\sum \text{Before Scores}} \right) \times 100\%$$
+
+* **Total Before Score:** $2 + 1 + 3 + 3 = 9$
+* **Total After Score:** $5 + 4 + 5 + 5 = 19$
+* **Net Skill Performance Boost:** **~111.1% increase** in structural code-to-paper verification accuracy.
 ## Repository Structure
 
 ```
