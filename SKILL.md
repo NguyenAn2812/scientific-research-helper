@@ -1,7 +1,8 @@
 ---
 name: scientific-research-helper
 description: >
-  Supports the entire scientific research process in English, designed for undergraduate and graduate students across all disciplines. Activate this skill when the user:
+  Supports the entire scientific research process in English, designed for undergraduate and graduate students across all disciplines.
+  Activate this skill when the user:
   - Wants to brainstorm research topics, identify research questions, or define research objectives
   - Asks about the structure of academic papers, theses, dissertations, or research reports
   - Needs to review, critique, or provide feedback on a research document
@@ -11,8 +12,9 @@ description: >
   - Uploads a report / thesis / research proposal for review or analysis
   - Wants to search for literature or check whether a topic has been previously studied
   - Sends code files, data, or results to verify figures reported in a document
-  - Mentions terms such as: "research topic", "thesis", "dissertation", "academic paper", "research method", "theoretical framework", "hypothesis", "literature review"
-  Activate even for vague requests like "help me research", "topic ideas", "is my paper okay", "check this file for me".
+  - Mentions terms such as: "research topic", "thesis", "dissertation", "literature review", "hypothesis", "theoretical framework"
+
+  Activate even for vague requests like "help me research", "topic ideas", "is my paper okay", or "check this file for me".
 ---
 
 # Scientific Research Helper
